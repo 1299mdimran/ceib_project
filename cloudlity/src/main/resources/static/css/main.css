@@ -1,0 +1,32 @@
+body{
+	background-color: #D6D6D6;
+}
+h1 {
+    color: #78ab46;
+}
+
+footer {
+    position: inherit;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+    background-color: #ccc
+}
+
+footer p {
+    padding: 15px;
+}
+
+a {
+	text-decoration: none;
+	
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+input[type=text], select {
+  
+    
+}

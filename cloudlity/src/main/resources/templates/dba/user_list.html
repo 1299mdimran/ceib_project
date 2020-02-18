@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{fragments/dba_layout}">
+<head>
+
+<title>Secured</title>
+</head>
+<body>
+	<div layout:fragment="content" th:remove="tag">
+		
+		<div class="panel panel-primary">
+			<!-- Default panel contents -->
+			<div class="panel-heading">
+				<h3 class="panel-title">List Of Users</h3>
+			</div>
+			<div class="tablecontainer">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>ID.</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Email</th>
+							<th>Department</th>
+							<th>Role</th>
+							<th>Username</th>
+							<th>
+						</tr>
+					</thead>
+					<!-- <tbody>
+                          <tr ng-repeat="u in ctrl.users">
+                              <td><span ng-bind="u.id"></span></td>
+                              <td><span ng-bind="u.username"></span></td>
+                              <td><span ng-bind="u.address"></span></td>
+                              <td><span ng-bind="u.email"></span></td>
+                              <td>
+                              <button type="button" ng-click="ctrl.edit(u.id)" class="btn btn-success custom-width">Edit</button>  <button type="button" ng-click="ctrl.remove(u.id)" class="btn btn-danger custom-width">Remove</button>
+                          </tr>
+                      </tbody>-->
+
+					<tbody>
+					<th:block th:object="${userList}">
+					<tr th:each="list ,iterator : ${userList}">
+					<td  th:text="${iterator.index}+1"></td>
+					<td th:text="${list.firstName}"></td>
+					<td th:text="${list.lastName}"></td>
+					<td th:text="${list.email}"></td>
+					<td ></td>
+					<td ></td>
+					<td th:text="${list.userName}"></td>
+					
+					<td>
+								<button type="button" class="btn btn-success custom-width">Edit</button>
+								<button type="button" class="btn btn-danger custom-width">Remove</button>
+					</td>
+					</tr>
+					</th:block>
+						<!-- <tr>
+							<td>xxxx<span></span></td>
+							<td>xxxx<span></span></td>
+							<td>xxxx<span></span></td>
+							<td>xxxx<span></span></td>
+							<td>xxxx<span></span></td>
+							<td>xxxx<span></span></td>
+							<td>xxxx<span></span></td>
+							<td>
+								<button type="button" class="btn btn-success custom-width">Edit</button>
+								<button type="button" class="btn btn-danger custom-width">Remove</button></td>
+						</tr> -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

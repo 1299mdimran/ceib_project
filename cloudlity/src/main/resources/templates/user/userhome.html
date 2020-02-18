@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/user_layout}">
+<head>
+    <title>Secured</title>
+</head>
+<body>
+<div layout:fragment="content" th:remove="tag">
+	
+		
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">This is a DBA secured page!</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						
+
+						
+						
+							<table class="table table-user-information">
+								<tbody>
+									<tr>
+										<td>Name:</td>
+										<td th:text="${user.firstName}"></td>
+									</tr>
+									<tr>
+										<td>Hire date:</td>
+										<td>06/23/2013</td>
+									</tr>
+									<tr>
+										<td>Date of Birth</td>
+										<td>01/24/1988</td>
+									</tr>
+
+									<tr>
+									<tr>
+										<td>Gender</td>
+										<td>Female</td>
+									</tr>
+									<tr>
+										<td>Contact</td>
+										<td th:text="${user.contact}"></td>
+									</tr>
+									<tr>
+										<td>Email</td>
+										<td th:text="${user.email}"></td>
+									</tr>
+								</tbody>
+							</table>
+
+							<a href="#" class="btn btn-primary">Edit Profile</a> <a
+								href="#" class="btn btn-primary">Change Password</a>
+						
+					</div>
+				</div>
+			</div>
+			</div>
+</body>
+</html>

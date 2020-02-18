@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{fragments/dba_layout}">
+<head>
+
+<title>Secured</title>
+</head>
+<body>
+	<div layout:fragment="content" th:remove="tag">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">Registration Form</h3>
+			</div>
+
+			<form class="form-horizontal" role="form" method="POST"
+				th:action="@{/signup}" th:object="${user}">
+				<fieldset>
+					<!--<div class="row">
+						<div class="col-md-4"></div>
+						<div class="col-md-4">
+							<div class="alert alert-success" role="alert" th:if="${msg}"
+								th:utext="${msg}"></div>
+						</div>
+					</div>-->
+
+
+
+					<!-- Text input-->
+					<br>
+					<div class="form-group">
+						<label class="col-md-4 control-label">First Name</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-user"></i></span> <input type="text"
+									th:field="*{firstName}" class="form-control" id="firstName"
+									placeholder="First Name" required autofocus>
+							</div>
+						</div>
+					</div>
+
+					<!-- Text input-->
+
+					<div class="form-group">
+						<label class="col-md-4 control-label">Last Name</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-user"></i></span> <input name="lastName"
+									placeholder="Last Name" class="form-control" type="text">
+							</div>
+						</div>
+					</div>
+
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label">E-Mail</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-envelope"></i></span> <input name="email"
+									placeholder="E-Mail Address" class="form-control" type="text">
+							</div>
+						</div>
+					</div>
+
+
+					<!-- Text input-->
+
+					<div class="form-group">
+						<label class="col-md-4 control-label">Contact No.</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-earphone"></i></span> <input name="contact"
+									placeholder="Contact No" class="form-control" type="text">
+							</div>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label class="col-md-4 control-label">Department</label>
+						<div class="col-md-4 selectContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-list"></i></span> <select name="department"
+									class="form-control selectpicker">
+									<option value="">-- Select User Department --</option>
+									<option>Department of Engineering</option>
+									<option>Department of Agriculture</option>
+									<option>Accounting Office</option>
+									<option>Tresurer's Office</option>
+									<option>MPDC</option>
+									<option>MCTC</option>
+									<option>MCR</option>
+									<option>Mayor's Office</option>
+									<option>Tourism Office</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label">Role</label>
+						<div class="col-md-4 selectContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-list"></i></span> 
+									<select   th:field="*{roleId}"	class="form-control selectpicker">
+									<option value="">-- Select User Role --</option>
+									  <option th:each="role : ${roles}" 
+									    th:value="${role.id}" 
+									    th:text="${role.roleName}" 
+									    >
+									 </option>
+									</select>
+								</div>
+						</div>
+					</div>
+
+
+
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label">Username</label>
+						<!-- Error message -->
+						<span class="text-danger align-middle"
+							th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">
+						</span>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-user"></i></span> <input type="text"
+									th:field="*{userName}" class="form-control" id="userName"
+									placeholder="User Name" required autofocus>
+							</div>
+
+						</div>
+
+
+					</div>
+
+					<!-- Text input-->
+
+					<div class="form-group">
+						<label class="col-md-4 control-label">Password</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-lock"></i></span> <input type="password"
+									th:field="*{password}" class="form-control" id="password"
+									placeholder="Password" required>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+					<!-- Success message -->
+					<div class="form-group">
+						<label class="col-md-3 control-label"></label>
+						<div class="col-md-5">
+							<div class="alert alert-success" role="alert"
+								id="success_message" th:if="${msg}" th:utext="${msg}">
+								Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.
+							</div>
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-md-4 control-label"></label>
+						<div class="col-md-4">
+
+							<input type="submit" name="login-submit" id="login-submit"
+								class="form-control btn btn-success" value="Register" />
+						</div>
+					</div>
+
+
+				</fieldset>
+
+			</form>
+
+		</div>
+		
+	</div>
+
+</body>
+</html>

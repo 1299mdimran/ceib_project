@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{fragments/user_layout}">
+<head>
+
+<title>Secured</title>
+</head>
+<body>
+	<div layout:fragment="content" th:remove="tag">
+		<div class="panel panel-primary" style="background-color: #ddd;padding: 0px 20px 0px 20px">
+			<div class="panel-heading">
+				<h3 class="panel-title">New Case Registration Form</h3>
+			</div>
+
+			<form class="form-horizontal" role="form" method="POST"
+				th:action="@{/signup}">
+				<fieldset>
+
+
+
+					<!-- Text input-->
+					<br>
+
+					<div class="form-group">
+						<label class="col-md-2 control-label">Case Mark To</label>
+						<div class="col-md-4 selectContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-user"></i></span> <select
+									class="form-control selectpicker">
+									<option value="">-- Select Officer --</option>
+									<option>MPDC</option>
+									<option>MCTC</option>
+									<option>MCR</option>
+
+								</select>
+							</div>
+						</div>
+						
+						<label class="col-md-2 control-label">Running S.No</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-user"></i></span> <input type="text"
+									class="form-control" id="agency" placeholder="Running S.No"
+									required autofocus>
+							</div>
+						</div>
+					</div>
+
+
+					<!-- Text input-->
+
+					<div class="form-group">
+						<label class="col-md-2 control-label">Agency</label>
+						<div class="col-md-4 selectContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-list"></i></span> <select
+									class="form-control selectpicker">
+									<option value="">-- Select Agency --</option>
+									<option>MPDC</option>
+									<option>MCTC</option>
+									<option>MCR</option>
+
+								</select>
+							</div>
+						</div>
+						<label class="col-md-2 control-label">Zonal/Regional office</label>
+						<div class="col-md-4 selectContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-list"></i></span> <select
+									class="form-control selectpicker">
+									<option value="">-- Select Case Category --</option>
+									<option>MPDC</option>
+									<option>MCTC</option>
+									<option>MCR</option>
+
+								</select>
+							</div>
+						</div>
+						
+					</div>
+
+					<!-- Text input-->
+
+					<div class="form-group">
+						<label class="col-md-2 control-label">Case Type</label>
+						<div class="col-md-4 selectContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-list"></i></span> <select
+									class="form-control selectpicker">
+									<option value="">-- Select Case Type --</option>
+									<option>MPDC</option>
+									<option>MCTC</option>
+									<option>MCR</option>
+
+								</select>
+							</div>
+						</div>
+						<label class="col-md-2 control-label">Case Category</label>
+						<div class="col-md-4 selectContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-list"></i></span> <select
+									class="form-control selectpicker">
+									<option value="">-- Select Case Category --</option>
+									<option>MPDC</option>
+									<option>MCTC</option>
+									<option>MCR</option>
+
+								</select>
+							</div>
+						</div>
+					</div>
+
+
+
+
+					<!-- Text input-->
+
+					<div class="form-group">
+						<label class="col-md-2 control-label">File No</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-file"></i></span> <input type="text"
+									class="form-control" id="agency" placeholder="File No" required
+									autofocus>
+							</div>
+						</div>
+						<label class="col-md-2 control-label">File Date</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-calendar"></i></span> <input type="text"
+									class="form-control" id="agency" placeholder="File Date"
+									required autofocus>
+							</div>
+						</div>
+					</div>
+
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-2 control-label">Group/Individuals</label>
+						<div class="col-md-4 selectContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-list"></i></span> <select
+									class="form-control selectpicker">
+									<option value="">-- Select Group --</option>
+									<option>MPDC</option>
+									<option>MCTC</option>
+									<option>MCR</option>
+
+								</select>
+							</div>
+						</div>
+						<label class="col-md-2 control-label">Source</label>
+						<div class="col-md-4 selectContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-list"></i></span> <select
+									class="form-control selectpicker">
+									<option value="">-- Select Source --</option>
+									<option>MPDC</option>
+									<option>MCTC</option>
+									<option>MCR</option>
+
+								</select>
+							</div>
+						</div>
+					</div>
+					<!-- Text input-->
+
+					<div class="form-group">
+						<label class="col-md-2 control-label">Informer</label>
+						<div class="col-md-4 selectContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-list"></i></span> <select
+									class="form-control selectpicker">
+									<option value="">-- Select Informer --</option>
+									<option>MPDC</option>
+									<option>MCTC</option>
+									<option>MCR</option>
+
+								</select>
+							</div>
+						</div>
+						<label class="col-md-2 control-label">Case Report Date</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-calendar"></i></span> <input type="text"
+									class="form-control" id="agency" placeholder="Case Report Date"
+									required autofocus>
+							</div>
+						</div>
+					</div>
+
+					<!-- Text input-->
+
+					<div class="form-group">
+						<label class="col-md-2 control-label">Amount Involved</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-user"></i></span> <input type="text"
+									class="form-control" id="agency" placeholder="Amount Involved"
+									required autofocus>
+							</div>
+						</div>
+						<label class="col-md-2 control-label">Currency Type</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-user"></i></span> <input type="text"
+									class="form-control" id="agency" placeholder="Currency Type"
+									required autofocus>
+							</div>
+						</div>
+					</div>
+
+					<!-- Text input-->
+
+					<div class="form-group">
+						<label class="col-md-2 control-label">Evidence Brief</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-user"></i></span> <input type="text"
+									class="form-control" id="agency" placeholder="Evidence Brief"
+									required autofocus>
+							</div>
+						</div>
+						<label class="col-md-2 control-label">Other Intelligence
+							Input</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-user"></i></span> <input type="text"
+									class="form-control" id="agency"
+									placeholder="Other Intelligence Input" required autofocus>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label class="col-md-2 control-label">Case Details</label>
+						<div class="col-md-8 selectContainer">
+							<div class="input-group">
+								<textarea rows="2" cols="100" class="form-control selectpicker">
+									
+
+								</textarea>
+							</div>
+						</div>
+					</div>
+
+
+					<!-- Success message -->
+					<div class="form-group">
+						<label class="col-md-3 control-label"></label>
+						<div class="col-md-5">
+							<div class="alert alert-success" role="alert"
+								id="success_message" th:if="${msg}" th:utext="${msg}">
+								Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.
+							</div>
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-md-4 control-label"></label>
+						<div class="col-md-4">
+
+							<input type="submit" name="login-submit" id="login-submit"
+								class="form-control btn btn-success" value="Submit" />
+						</div>
+					</div>
+
+
+				</fieldset>
+
+			</form>
+
+		</div>
+
+	</div>
+
+</body>
+</html>
